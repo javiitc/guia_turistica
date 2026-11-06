@@ -1,0 +1,4 @@
+<resources>
+    <!-- NoActionBar: la actividad usará su propia Toolbar -->
+    <style name="Theme.GuiaTuristica" parent="Theme.Material3.DayNight.NoActionBar" />
+</resources>
