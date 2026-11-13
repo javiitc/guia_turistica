@@ -34,6 +34,7 @@ android {
 
 dependencies {
     implementation(libs.appcompat)
+    implementation(libs.lifecycle.runtime.ktx)
     implementation(libs.material)
     implementation(libs.activity.ktx)
     implementation(libs.constraintlayout)
@@ -43,9 +44,16 @@ dependencies {
     implementation(libs.compose.foundation)
     implementation(libs.activity.compose)
     implementation(libs.material3)
+    implementation(libs.compose.material.icons.core)
+    implementation(libs.ui.graphics)
+    implementation(libs.ui.tooling.preview)
     implementation(libs.viewpager2)
     implementation(libs.recyclerview)
     testImplementation(libs.junit)
+    androidTestImplementation(platform(libs.compose.bom))
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+    androidTestImplementation(libs.ui.test.junit4)
+    debugImplementation(libs.ui.test.manifest)
+    debugImplementation(libs.ui.tooling)
 }

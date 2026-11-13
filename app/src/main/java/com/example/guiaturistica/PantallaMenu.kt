@@ -1,5 +1,6 @@
 package com.example.guiaturistica
 
+import android.content.Intent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.aspectRatio
@@ -21,6 +22,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.launch
@@ -82,12 +84,19 @@ fun TarjetaLugar (lugar : Lugar, alPulsar: () -> Unit ){
 
 @Composable
 fun ListaLugares (categoria : CategoriaLugaresTuristicos) {
+
     val lugares = LugaresTuristicos.filtroCategoria(categoria)
+    val context = LocalContext.current
+
     LazyColumn(modifier = Modifier.fillMaxSize()) {
         items(lugares) {lugar ->
             TarjetaLugar(
                 lugar = lugar,
-                alPulsar = {}
+                alPulsar = {
+                    val intent = Intent(context, DetalleActivity::class.java)
+                    intent.putExtra(LUGAR_ID, lugar.id)
+                    context.startActivity(intent)
+                }
             )
         }
     }

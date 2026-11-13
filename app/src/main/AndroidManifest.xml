@@ -11,9 +11,16 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".DetalleActivity"
+            android:exported="false"
+            android:label="@string/title_activity_detalle"
+            android:theme="@style/Theme.GuiaTuristica"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>
