@@ -1,7 +1,11 @@
 package com.example.guiaturistica
 
 import androidx.annotation.DrawableRes
-enum class CategoriaLugaresTuristicos {HISTORICOS, GASTRONOMIA, MUSEOS}
+enum class CategoriaLugaresTuristicos (val titulo : String) {
+    HISTORICOS("Históricos"),
+    GASTRONOMIA("Gastronomía"),
+    MUSEOS("Museos")
+}
 
 data class Lugar (
     val id: Int,

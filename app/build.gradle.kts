@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.compose)
 }
 
 android {
@@ -27,6 +28,7 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        compose = true
     }
 }
 
@@ -36,6 +38,10 @@ dependencies {
     implementation(libs.activity.ktx)
     implementation(libs.constraintlayout)
     implementation(libs.fragment.ktx)
+    implementation(platform(libs.compose.bom))
+    implementation(libs.compose.ui)
+    implementation(libs.compose.foundation)
+    implementation(libs.activity.compose)
     implementation(libs.material3)
     implementation(libs.viewpager2)
     implementation(libs.recyclerview)
